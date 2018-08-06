@@ -33,7 +33,7 @@ public class Books {
 	 * @return the booksWriter
 	 */
 	public String getBooksWriter() {
-		return booksName;
+		return booksWriter;
 	}
 	/**
 	 * @return the bookPublisher
