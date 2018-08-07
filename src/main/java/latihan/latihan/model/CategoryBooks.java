@@ -2,6 +2,8 @@ package latihan.latihan.model;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="books_category")
@@ -11,6 +13,8 @@ public class CategoryBooks {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCategoryBooks;
 
+    @NotNull
+    @NotBlank
     @Column(name = "books_category")
     private String bookCategory;
 

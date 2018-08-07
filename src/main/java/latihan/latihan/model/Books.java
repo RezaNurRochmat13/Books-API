@@ -1,5 +1,7 @@
 package latihan.latihan.model;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "books")
@@ -9,15 +11,23 @@ public class Books {
 	@Column(name = "id")
 	private Long id;
 
+	@NotNull
+	@NotBlank
 	@Column(name = "book_name")
 	private String booksName;
-	
+
+	@NotNull
+    @NotBlank
 	@Column(name = "book_writer")
 	private String booksWriter;
 
+	@NotNull
+    @NotBlank
 	@Column(name="book_publisher")
 	private String booksPublisher;
 
+	@NotNull
+    @NotBlank
 	@Column(name="book_description")
     private String booksDescription;
 

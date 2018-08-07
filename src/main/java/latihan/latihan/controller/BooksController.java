@@ -3,9 +3,9 @@ package latihan.latihan.controller;
 
 import latihan.latihan.exception.ResourceNotFound;
 import latihan.latihan.model.Books;
+import latihan.latihan.model.CategoryBooks;
 import latihan.latihan.repository.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -47,6 +47,13 @@ public class BooksController {
 
         Books updateBooks = booksRepository.save(books);
         return updateBooks;
+    }
+
+    @DeleteMapping("/books/{id}")
+    public void deleteCategoryBooks(@PathVariable(value = "id") Long id) {
+        Books books = booksRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Id books", "Not found with id", id));
+        booksRepository.delete(books);
     }
 
 }
